@@ -15,19 +15,11 @@ class Cart_page(Base):
 
     #Locators
 
-    # field_promo = "//input[@id='coupon']"
-    # coupon_button = "//div[@id='btnCoupon']"
     comment = "//textarea[@name='comment']"
     checkbox_call = "//label[@for='cartPersonNoConfirm']"
 
 
     #Getters
-    #
-    # def get_field_promo(self):
-    #     return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.field_promo)))
-    #
-    # def get_coupon_button(self):
-    #     return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.coupon_button)))
 
     def get_comment(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.comment)))
@@ -35,17 +27,7 @@ class Cart_page(Base):
     def get_checkbox_call(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.checkbox_call)))
 
-
-
     # Actions
-
-    # def input_field_promo(self):
-    #     self.get_field_promo().send_keys("SUN")
-    #     print("Input coupon")
-    #
-    # def click_coupon_button(self):
-    #     self.get_coupon_button().click()
-    #     print("Click coupon button")
 
     def input_comment(self, comment):
         self.get_comment().send_keys(comment)
@@ -59,8 +41,6 @@ class Cart_page(Base):
     #Methods
 
     def input_information(self):
-        # self.input_field_promo()
-        # self.click_coupon_button()
         self.input_comment("Просьба привезти с 2 до 4 в субботу")
         self.click_checkbox_call()
 
