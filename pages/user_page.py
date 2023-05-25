@@ -21,8 +21,6 @@ class User_page(Base):
     email = "//input[@id='cartPersonEmail']"
     card_Bond_street = "//input[@id='cartPersonBonusCard']"
     checkbox_subscription = "//label[@for='cartPersonSubscribeNews']"
-    # button_make_order = "//div[@class='btn-make-order btn rounded btn-green-2 color-white shadow-none w-100 font-body']"
-
 
     #Getters
 
@@ -44,8 +42,6 @@ class User_page(Base):
     def get_checkbox_subscription(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.checkbox_subscription)))
 
-    # def get_button_make_order(self):
-    #     return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.button_make_order)))
 
     # Actions
 
@@ -73,10 +69,6 @@ class User_page(Base):
         self.get_checkbox_subscription().click()
         print("Click checkbox")
 
-    # def click_button_make_order(self):
-    #     self.get_button_make_order().click()
-    #     print("Click button make order")
-
     #Methods
 
     def input_user_information(self):
@@ -87,4 +79,3 @@ class User_page(Base):
         self.input_email("123@tut.by")
         self.input_card_Bond_street(123456)
         self.click_checkbox_subscription()
-        # self.click_button_make_order()
